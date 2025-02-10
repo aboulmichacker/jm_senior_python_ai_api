@@ -31,11 +31,11 @@ def predict_study_time():
                     'accuracy': [student_data['accuracy']],
                     'quiz_time_taken': [student_data['quiz_time_taken']]
                 })
-                minutes = model.predict(new_student_data)
-                minutes = minutes.round(0)
+                hours = model.predict(new_student_data)
+                hours = hours.round(1)
                 results.append({
                     'topic': student_data['topic'], 
-                    'study_duration': int(minutes[0])
+                    'study_duration': hours[0]
                 })
             except (ValueError, TypeError) as e:
                 return jsonify({'error': f'Error processing data: {str(e)}'}), 400
