@@ -24,11 +24,11 @@ def predict_study_time():
         data = request.get_json()
         results = []
         for student_data in data:
-            if not isinstance(student_data, dict) or 'accuracy' not in student_data or 'quiz_time_taken' not in student_data or 'topic' not in student_data:
+            if not isinstance(student_data, dict) or 'quiz_score' not in student_data or 'quiz_time_taken' not in student_data or 'topic' not in student_data:
                 return jsonify({'error': 'invalid data'}), 400
             try:
                 new_student_data = pd.DataFrame({
-                    'accuracy': [student_data['accuracy']],
+                    'quiz_score': [student_data['quiz_score']],
                     'quiz_time_taken': [student_data['quiz_time_taken']]
                 })
                 hours = model.predict(new_student_data)
