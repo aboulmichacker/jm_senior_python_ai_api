@@ -47,13 +47,3 @@ def predict_study_time():
            
 if __name__ == '__main__':
     app.run(debug=True)
-
-# student_data_list = [
-#     {'accuracy': 0.3, 'quiz_time_taken': 20, 'topic': 'Energy'},
-#     {'accuracy': 0.7, 'quiz_time_taken': 15, 'topic': 'Simple Machines'},
-#     {'accuracy': 0.5, 'quiz_time_taken': 25, 'topic': 'Motion and Forces'},
-# ]
-
-# predictions = predict_study_time(student_data_list)
-
-# print(predictions)
